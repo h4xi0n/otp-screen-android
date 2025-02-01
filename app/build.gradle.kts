@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.h4xi0n.pingeneration"
+    namespace = "com.h4xi0n.otp"
     compileSdk = 35
 
     defaultConfig {
@@ -32,6 +32,13 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
+    }
 }
 
 dependencies {
@@ -41,4 +48,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.security.crypto)
 }

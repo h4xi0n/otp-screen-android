@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">PinGeneration</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="confirm_pin">Confirm PIN</string>
+    <string name="enter_current_pin">Enter current PIN</string>
+    <string name="enter_new_pin">Enter new PIN</string>
+
+    <string name="pin_entry_title">Enter PIN</string>
+    <string name="pin_entry_description">Set a PIN</string>
+
+    <string name="pin_generation_title">Create PIN</string>
+    <string name="pin_generation_description">Set a PIN</string>
+    <string name="pin_generation_warning">Don\'t forget your PIN. There is no way you can recover the PIN later.</string>
+
+    <string name="pin_change_title">Change PIN</string>
+    <string name="pin_change_description">Change your PIN.</string>
+    <string name="pin_change_warning">Don\'t forget your PIN. There is no way you can recover the PIN later.</string>
 </resources>

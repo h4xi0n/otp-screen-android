@@ -1,4 +1,4 @@
-package com.h4xi0n.pingeneration
+package com.h4xi0n.otp
 
 import org.junit.Test
 
