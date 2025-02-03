@@ -26,16 +26,16 @@ import androidx.compose.ui.unit.dp
  * @param modifier The modifier to be applied to the Row containing the OTP fields.
  * @param otpLength The length of the OTP to be entered. Default is 6.
  * @param onOtpComplete A callback function to be invoked when the OTP entry is complete.
- * @param onResetRequest A callback function to be invoked when a reset is requested. Default is an empty implementation.
  */
 @Composable
 fun OtpEntry(
     modifier: Modifier = Modifier,
     otpLength: Int = 6,
     onOtpComplete: (String) -> Unit,
-    onResetRequest: () -> Unit = { /* Default reset implementation */ }
 ) {
-    val otpValues = remember { mutableStateListOf(*Array(otpLength) { TextFieldValue("") }) }
+    val otpValues = remember { mutableStateListOf<TextFieldValue>().apply {
+        repeat(otpLength) { add(TextFieldValue("")) }
+    } }
     val focusManager = LocalFocusManager.current
 
     Row(modifier = modifier) {
@@ -61,8 +61,8 @@ fun OtpEntry(
                     .size(50.dp)
                     .border(1.dp, Color.Gray, MaterialTheme.shapes.small),
                 keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Number,
-                    autoCorrect = false
+                    autoCorrectEnabled = false,
+                    keyboardType = KeyboardType.Number
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = { onOtpComplete(otpValues.joinToString("") { it.text }) },

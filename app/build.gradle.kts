@@ -27,6 +27,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        freeCompilerArgs = listOf("-Xinline-classes", "-Xopt-in=kotlin.RequiresOptIn")
     }
 
     testOptions {
@@ -35,9 +36,10 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion  = "1.5.0"
     }
 }
 
@@ -52,4 +54,17 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.tooling)
     implementation(libs.androidx.security.crypto)
+    implementation(libs.androidx.compiler)
+    implementation(libs.androidx.runtime)
+
+
+    // Core Compose dependencies
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.activity.compose) // For Compose in Activities
+
+    // Other dependencies for XML-based activities
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.foundation)
+
 }
